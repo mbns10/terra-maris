@@ -6,7 +6,7 @@
 <title>Spa thaïlandais Marrakech | Massage thaï – TERRA MARIS</title>
 <meta name="description" content="Découvrez TERRA MARIS, spa thaïlandais à Marrakech. Massages thaï traditionnels, huiles, pierres chaudes et massage en couple. Réservez facilement.">
 <link rel="canonical" href="https://terramaris.vercel.app/">
-<meta property="og:type" content="website"><meta property="og:title" content="TERRA MARIS | Spa thaïlandais à Marrakech"><meta property="og:description" content="L'art du bien-être thaïlandais à Marrakech. Réservation rapide par WhatsApp."><meta property="og:image" content="https://terramaris.vercel.app/photo/1er%20barre.jpeg"><meta property="og:locale" content="fr_MA"><meta name="twitter:card" content="summary_large_image"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#17332c"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>"><link rel="preload" as="image" href="photo/1er%20barre.jpeg" fetchpriority="high">
+<meta property="og:type" content="website"><meta property="og:title" content="TERRA MARIS | Spa thaïlandais à Marrakech"><meta property="og:description" content="L'art du bien-être thaïlandais à Marrakech. Réservation rapide par WhatsApp."><meta property="og:image" content="https://terramaris.vercel.app/photo/1er%20barre.jpeg"><meta property="og:url" content="https://terramaris.vercel.app/"><meta property="og:locale" content="fr_MA"><meta name="twitter:card" content="summary_large_image"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#17332c"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>"><link rel="preload" as="image" href="photo/1er%20barre.jpeg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
@@ -272,7 +272,7 @@ dialog::backdrop{background:rgba(25,16,10,.65)}
 <section class="hero"><div id="hp"><div class="ph sl on" data-k="hero" data-l="[PHOTO HERO 1 : salle de soin, bois, pierre, bougies]"></div><div class="ph sl" data-k="hero2" data-l="[PHOTO HERO 2 : cour, plantes tropicales, lumière chaude]"></div><div class="ph sl" data-k="hero3" data-l="[PHOTO HERO 3 : détail huiles et tissus]"></div></div><div class="sh"></div><div class="dots" id="dots"><i class="on"></i><i></i><i></i></div><a class="sd" href="#intro" aria-label="Défiler vers le contenu">Marrakech · Morocco<i></i></a>
 <div class="w"><p class="lab">Spa thaïlandais · Marrakech</p><h1>TERRA MARIS<small>Spa thaïlandais à Marrakech</small></h1>
 <p data-t="sub">Une parenthèse de calme, de soin et de relaxation au cœur de Marrakech.</p>
-<div class="acts"><button class="btn f" data-book data-t="bookn">Réserver maintenant</button><a class="btn" href="#soins" data-t="disc">Découvrir nos soins</a></div></div></section>
+<div class="acts"><button class="btn f" data-book data-t="bookn">Réserver mon massage</button><a class="btn" href="#soins" data-t="disc">Découvrir nos soins</a></div></div></section>
 
 <div class="trust" id="trust"></div>
 <section id="intro"><div class="w cols"><div class="rv"><h2>Un spa thaïlandais au cœur de Marrakech</h2>
@@ -374,7 +374,7 @@ const CONFIG={
  rating:"", reviewCount:"", // à remplir avec les vraies données Google
  reviews:[],             // [{text:"…",author:"…",stars:5}] avis réels uniquement
  img:{hero:IMGS.serviette.u,hero2:IMGS.huile.u,hero3:IMGS.pierres.u,close:IMGS.argile.u,intro:IMGS.logo.u,immersive:IMGS.visage.u,couple:IMGS.couple.u,tour:IMGS.pieds.u,faq:IMGS.tete.u}, // URLs de vos photos
- bookingUrl:"",siteUrl:"",slots:["10:00","11:00","12:00","14:00","15:00","16:00","17:00","18:00","19:00"],closed:[]           // système de réservation en ligne (optionnel)
+ bookingUrl:"",siteUrl:"https://terramaris.vercel.app",slots:["10:00","11:00","12:00","14:00","15:00","16:00","17:00","18:00","19:00"],closed:[]           // système de réservation en ligne (optionnel)
 };
 /* service: n=nom d=description t=durée p=prix i=image a=disponible */
 const SERVICES=[
@@ -404,6 +404,10 @@ const hi=k=>CONFIG.img[k];
 $$(".ph[data-k]").forEach(e=>{const u=hi(e.dataset.k);if(u){e.style.backgroundImage=`url(${u})`;e.classList.add("hi")}});
 /* services */
 $("#svc").innerHTML=SERVICES.map(g=>`<div class="cat"><h3>${g.c}</h3><div class="rail">${g.l.map(s=>`<article class="sv ${s.a?"":"off"}"><div class="ph hi" style="background-image:url(${s.i})"></div><div class="sh"></div><div class="t"><h4>${s.n}</h4><div class="m">${lbl(s)}</div><div class="x"><p>${s.d}</p><div class="row">${s.a?`<button class="btn f" data-book="${s.n}">Choisir ce massage</button>`:"<span>Indisponible</span>"}</div></div></div></article>`).join("")}</div></div>`).join("");
+const svc=$("#svc"),fb=document.createElement("div");fb.className="fl";
+fb.innerHTML='<button class="on" data-f="">Tous</button>'+SERVICES.map((g,i)=>`<button data-f="${i}">${g.c}</button>`).join("");
+svc.before(fb);
+fb.onclick=e=>{const b=e.target.closest("button");if(!b)return;fb.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));[...svc.children].forEach((c,i)=>c.hidden=b.dataset.f!==""&&+b.dataset.f!==i)};
 //$("#exs").innerHTML=EXP.map(e=>`<div class="ex rv"><div class="ph hi" style="background-image:url(${IMGS[e[3]].u})"></div><div><h3>${e[0]}</h3><div class="d">Durée : [À AJOUTER]</div><p>${e[1]}</p><button class="btn" data-book="${e[2]}">Réserver</button></div></div>`).join("");
 renderFaq();
 /* galerie */
