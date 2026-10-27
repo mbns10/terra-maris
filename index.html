@@ -254,6 +254,12 @@ dialog::backdrop{background:rgba(25,16,10,.65)}
 [dir=rtl] .ans{padding:0 56px 22px 0}
 [dir=rtl] .sd{left:auto;right:24px}
 @media(max-width:860px){[dir=rtl] .ans{padding-right:0}}
+/* === FIX débordement horizontal mobile === */
+.cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cols>*,.fq2>*,.av>*{min-width:0}
+.map{width:100%;max-width:100%}
+@media(max-width:760px){.cols{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:400px){.lg{display:flex;white-space:nowrap}.logo{font-size:1rem;letter-spacing:.18em}header .w{padding:0 16px}.hr{gap:8px}.lg button{padding:4px 3px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 </style>
 </head>
