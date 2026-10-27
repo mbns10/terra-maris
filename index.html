@@ -260,6 +260,38 @@ dialog::backdrop{background:rgba(25,16,10,.65)}
 .map{width:100%;max-width:100%}
 @media(max-width:760px){.cols{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:400px){.lg{display:flex;white-space:nowrap}.logo{font-size:1rem;letter-spacing:.18em}header .w{padding:0 16px}.hr{gap:8px}.lg button{padding:4px 3px}}
+/* === REFONTE PREMIUM === */
+:root{--moss:#102820;--teak:#0c1f19;--bg:#f5f1e8;--stone:#ece6d7;--gold:#bda06a;--brun:#482719}
+.hero .sh{background:linear-gradient(180deg,rgba(16,40,32,.6),rgba(16,40,32,.25) 40%,rgba(16,40,32,.82))}
+@media(max-width:700px) and (min-height:700px){.sd{display:flex;left:50%;transform:translateX(-50%);bottom:calc(128px + env(safe-area-inset-bottom,0px))}}
+
+/* menu plein écran : liens en cascade */
+@keyframes hIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(max-width:980px){nav.o a{animation:hIn .7s cubic-bezier(.2,.7,.2,1) both}nav.o a:nth-child(2){animation-delay:.07s}nav.o a:nth-child(3){animation-delay:.14s}nav.o a:nth-child(4){animation-delay:.21s}nav.o a:nth-child(5){animation-delay:.28s}nav.o a:nth-child(6){animation-delay:.35s}}
+
+/* photos : révélation par masque */
+.ph.rv{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.77,0,.18,1)}
+.ph.rv.in{clip-path:inset(0)}
+@media(prefers-reduced-motion:reduce){.ph.rv{clip-path:none}}
+
+/* cartes de massage : version mobile verticale */
+@media(max-width:760px){
+.rail{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;overflow:visible;margin:0;padding:0;scroll-snap-type:none}
+.sv{flex:none;aspect-ratio:auto;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);box-shadow:0 14px 34px -24px rgba(16,40,32,.55)}
+.sv .ph{position:relative;inset:auto;width:100%;aspect-ratio:4/3}
+.sv .sh{display:none}
+.sv .t{position:static;padding:22px 20px 24px}
+.sv h4{font-size:1.7rem;color:var(--moss)}
+.sv .m{font-size:14px;opacity:1;color:#7a6335;letter-spacing:.04em;margin:8px 0 12px}
+.sv .x{max-height:none;opacity:1}.sv .x p{color:var(--mut);opacity:1;font-size:15px;line-height:1.6;margin-bottom:18px}
+.sv .btn.f{width:100%;justify-content:center;min-height:48px}
+}
+
+/* galerie plein écran : fermer et naviguer */
+.lb{position:relative}
+.lbx,.lbn{position:absolute;z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:#000a;color:#fff;font-size:26px;cursor:pointer}
+.lbx{top:8px;right:8px}
+.lbn{top:50%;transform:translateY(-50%)}.lbp{left:8px}.lbnx{right:8px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 </style>
 </head>
