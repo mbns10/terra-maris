@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Spa thaïlandais Marrakech | Massage thaï – TERRA MARIS</title>
 <meta name="description" content="Découvrez TERRA MARIS, spa thaïlandais à Marrakech. Massages thaï traditionnels, huiles, pierres chaudes et massage en couple. Réservez facilement.">
-<link rel="canonical" href="https://[VOTRE-DOMAINE]/">
-<meta property="og:type" content="website"><meta property="og:title" content="TERRA MARIS | Spa thaïlandais à Marrakech"><meta property="og:description" content="L’art du bien-être thaïlandais à Marrakech. Réservation rapide par WhatsApp."><meta property="og:image" content="https://[VOTRE-DOMAINE]/photo/1er%20barre.jpeg"><meta property="og:locale" content="fr_MA"><meta name="twitter:card" content="summary_large_image"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#17332c"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>"><link rel="preload" as="image" href="photo/1er%20barre.jpeg" fetchpriority="high">
+<link rel="canonical" href="https://terramaris.vercel.app/">
+<meta property="og:type" content="website"><meta property="og:title" content="TERRA MARIS | Spa thaïlandais à Marrakech"><meta property="og:description" content="L'art du bien-être thaïlandais à Marrakech. Réservation rapide par WhatsApp."><meta property="og:image" content="https://terramaris.vercel.app/photo/1er%20barre.jpeg"><meta property="og:locale" content="fr_MA"><meta name="twitter:card" content="summary_large_image"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#17332c"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>"><link rel="preload" as="image" href="photo/1er%20barre.jpeg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
@@ -215,6 +215,45 @@ dialog::backdrop{background:rgba(25,16,10,.65)}
 .lb img{max-width:100%;max-height:80vh}
 @media(max-width:760px){.cols,.ex,.rev{grid-template-columns:1fr}.ex:nth-child(even) .ph{order:0}.ig{grid-template-columns:repeat(2,1fr)}.val{grid-template-columns:1fr}}
 [dir=rtl] .hero h1{letter-spacing:0}
+#hp .ph:first-child{background-image:url(photo/1er%20barre.jpeg)}
+/* === MOBILE PREMIUM === */
+/* boutons : contraste et retour tactile */
+.btn.f{color:var(--teak)}.btn.f:hover{color:#fff}.bar .rs{color:var(--teak)}
+.btn,.bar a,.bar button{-webkit-tap-highlight-color:transparent}
+.btn:active,.bar button:active{transform:scale(.97)}
+@media(hover:hover){.sv:hover .ph{transform:scale(1.05)}}
+@media(hover:none){.sv:hover .ph{transform:none}}
+
+/* header mobile */
+.lg2{display:none}
+@media(max-width:980px){.bg{min-height:44px;padding:0 8px}.lg button{min-width:36px;min-height:44px}}
+@media(max-width:480px){.hr .lg{display:none}.lg2{display:flex;gap:14px;font:400 1.2rem 'DM Sans'}header .w{padding:0 16px}}
+
+/* hero : entrée en scène */
+@keyframes hIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes hZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero .lab,.hero h1,.hero .acts,.hero p{animation:hIn .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .lab{animation-delay:.15s}.hero h1{animation-delay:.3s}.hero p{animation-delay:.5s}.hero .acts{animation-delay:.7s}
+.hero .ph.on{animation:hZoom 7s ease-out both}
+@media(max-width:700px){.hero h1{font-size:clamp(2.4rem,12vw,3.4rem);letter-spacing:.1em}.hero .acts .btn{width:100%;justify-content:center}}
+
+/* services mobile : liste verticale */
+@media(max-width:700px){
+.rail{display:grid;grid-template-columns:1fr;gap:14px;overflow:visible;margin:0;padding:0}
+.sv{aspect-ratio:auto;display:grid;grid-template-columns:112px 1fr;background:var(--teak);color:var(--stone)}
+.sv .ph{position:relative;inset:auto;min-height:100%}.sv .sh{display:none}
+.sv .t{position:static;padding:16px 16px 16px 0}.sv h4{font-size:1.4rem}
+.sv .btn{min-height:44px;padding:12px 16px}}
+
+/* galerie : fermeture visible */
+.lb{position:relative}
+.lbx{position:absolute;top:8px;right:8px;z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:#000a;color:#fff;font-size:26px;cursor:pointer}
+
+/* arabe / RTL */
+[dir=rtl] *{letter-spacing:0!important}
+[dir=rtl] .ans{padding:0 56px 22px 0}
+[dir=rtl] .sd{left:auto;right:24px}
+@media(max-width:860px){[dir=rtl] .ans{padding-right:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -223,14 +262,15 @@ dialog::backdrop{background:rgba(25,16,10,.65)}
 <a class="logo" href="#top" aria-label="TERRA MARIS">TERRA MARIS<!-- [LOGO TERRA MARIS] --></a>
 <nav id="nv">
 <a href="#soins" data-t="n2">Massages &amp; Soins</a><a href="#apropos" data-t="n4">À propos</a><a href="#galerie" data-t="n5">Galerie</a><a href="#avis" data-t="n6">Avis</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+<div class="lg lg2"><button data-lg="fr" class="on">FR</button><button data-lg="en">EN</button><button data-lg="ar">عربية</button></div>
 </nav>
 <div class="hr"><div class="lg"><button data-lg="fr" class="on">FR</button><button data-lg="en">EN</button><button data-lg="ar">عربية</button></div>
-<button class="btn f rb" data-book data-t="book">Réserver</button><button class="bg" id="bg" aria-label="Menu">MENU</button></div>
+<button class="btn f rb" data-book data-t="book">Réserver</button><button class="bg" id="bg" aria-label="Menu" aria-controls="nv" aria-expanded="false">MENU</button></div>
 </div></header>
 
 <main id="top">
 <section class="hero"><div id="hp"><div class="ph sl on" data-k="hero" data-l="[PHOTO HERO 1 : salle de soin, bois, pierre, bougies]"></div><div class="ph sl" data-k="hero2" data-l="[PHOTO HERO 2 : cour, plantes tropicales, lumière chaude]"></div><div class="ph sl" data-k="hero3" data-l="[PHOTO HERO 3 : détail huiles et tissus]"></div></div><div class="sh"></div><div class="dots" id="dots"><i class="on"></i><i></i><i></i></div><a class="sd" href="#intro" aria-label="Défiler vers le contenu">Marrakech · Morocco<i></i></a>
-<div class="w"><p class="lab">Spa thaïlandais · Marrakech</p><h1>TERRA MARIS<small>Spa thaïlandais à Marrakech</small></h1><p class="hs" data-t="h2">Spa thaïlandais à Marrakech</p>
+<div class="w"><p class="lab">Spa thaïlandais · Marrakech</p><h1>TERRA MARIS<small>Spa thaïlandais à Marrakech</small></h1>
 <p data-t="sub">Une parenthèse de calme, de soin et de relaxation au cœur de Marrakech.</p>
 <div class="acts"><button class="btn f" data-book data-t="bookn">Réserver maintenant</button><a class="btn" href="#soins" data-t="disc">Découvrir nos soins</a></div></div></section>
 
@@ -306,7 +346,7 @@ dialog::backdrop{background:rgba(25,16,10,.65)}
 <label>Message<textarea id="f-m" rows="2"></textarea></label>
 <div class="acts"><button class="btn f" type="button" id="b-wa">Envoyer par WhatsApp</button><button class="btn" type="button" id="b-em">Envoyer par email</button></div></form></dialog>
 <dialog id="rs"><div class="rh"><span class="logo">TERRA MARIS</span><button class="chip" id="bx2">Fermer ✕</button></div><div class="stp" id="stp"></div><div class="rb2" id="rb"></div><div class="rf" id="rf"></div></dialog>
-<dialog id="lb" class="lb"><div class="ph hi" id="lbi"></div></dialog>
+<dialog id="lb" class="lb"><button class="lbx" aria-label="Fermer">×</button><div class="ph hi" id="lbi"></div></dialog>
 
 <script>
 const IMGS={
@@ -350,7 +390,7 @@ const SERVICES=[
  {id:"tete",n:"Massage tête, nuque et épaules",d:"Dos, épaules et tête apaisés par un massage anti-stress.",o:[["1 h",450],["1 h 30",650],["2 h",850]],i:IMGS.tete.u,a:true},
  {id:"pieds",n:"Massage des pieds (réflexologie)",d:"Jambes et pieds fatigués ravivés, circulation stimulée.",o:[["30 min",300],["1 h",450]],i:IMGS.pieds.u,a:true}]},
 {c:"Expériences",l:[
- {id:"couple",n:"Massage Thaï en couple",d:"Un massage à deux, avec un praticien dédié à chacun. Durée : [À CONFIRMER]",o:[["à partir de",900]],i:IMGS.couple.u,a:true}]}];
+ {id:"couple",n:"Massage Thaï en couple",d:"Un massage à deux, avec un praticien dédié à chacun.",o:[["à partir de",900]],i:IMGS.couple.u,a:true}]}];
 const EXP=[["Massage thaï traditionnel","Le geste ancestral, dans le calme.","Massage Thaï traditionnel (Watpo)","dos"],["Massage Heritage","Chaleur, parfum, lenteur.","Massage Heritage (huile thaïe)","huile"],["Relaxation profonde","Un lâcher-prise total.","Massage Thaï suédois","visage"],["Soin des pieds","Le point de départ de la détente.","Massage des pieds (réflexologie)","pieds"]];
 const MIN=Math.min(...SERVICES.flatMap(g=>g.l.flatMap(s=>s.o.map(x=>x[1]))));
 const FAQ=[["Où faire un massage thaï à Marrakech ?","TERRA MARIS est un spa thaïlandais situé à Marrakech. [À COMPLÉTER : adresse et quartier]"],["Combien coûte un massage thaï à Marrakech ?","Nos soins démarrent à "+MIN+" MAD. Le prix dépend du massage et de la durée choisie : il s’affiche sur chaque soin et pendant la réservation."],["Quels types de massages propose TERRA MARIS ?","Massage thaï signature, traditionnel (Watpo), en profondeur et aux pierres chaudes ; massage Heritage à l’huile thaïe et massage thaï suédois ; massage tête, nuque et épaules ; réflexologie des pieds ; massage thaï en couple."],["Faut-il réserver un massage à Marrakech ?","Nous recommandons de réserver pour garantir votre créneau. [À COMPLÉTER : accueil sans rendez-vous]"],["Comment réserver, et peut-on réserver par WhatsApp ?","Oui. Choisissez votre soin, la date et l’heure, puis envoyez votre demande par WhatsApp ou par email. Aucun compte n’est nécessaire."],["Peut-on réserver un massage en couple à Marrakech ?","Oui, TERRA MARIS propose un massage thaï en couple, avec un praticien pour chaque personne. [À COMPLÉTER : durée]"],["Les touristes peuvent-ils réserver facilement ?","Oui : la réservation se fait sans compte, en français, en anglais ou en arabe, par WhatsApp ou par email."],["Quels sont les horaires du spa ?","[À COMPLÉTER : horaires]"],["Où se trouve TERRA MARIS à Marrakech ?","[À COMPLÉTER : adresse]. Un bouton Itinéraire ouvre directement Google Maps."],["Quels moyens de paiement sont acceptés ?","[À COMPLÉTER]"],["Peut-on choisir la pression du massage ?","[À COMPLÉTER]"],["Combien de temps avant faut-il arriver ?","[À COMPLÉTER]"]];
@@ -363,7 +403,7 @@ const wa=t=>"https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(t);
 const hi=k=>CONFIG.img[k];
 $$(".ph[data-k]").forEach(e=>{const u=hi(e.dataset.k);if(u){e.style.backgroundImage=`url(${u})`;e.classList.add("hi")}});
 /* services */
-$("#svc").innerHTML=SERVICES.map(g=>`<div class="cat"><h3>${g.c}</h3><div class="rail">${g.l.map(s=>`<article class="sv ${s.a?"":"off"}"><div class="ph hi" style="background-image:url(${s.i})"></div><div class="sh"></div><div class="t"><h4>${s.n}</h4><div class="m">${lbl(s)}</div><div class="x"><p>${s.d}</p><div class="row">${s.a?`<button class="btn f" data-book="${s.n}">Réserver ce soin</button>`:"<span>Indisponible</span>"}</div></div></div></article>`).join("")}</div></div>`).join("");
+$("#svc").innerHTML=SERVICES.map(g=>`<div class="cat"><h3>${g.c}</h3><div class="rail">${g.l.map(s=>`<article class="sv ${s.a?"":"off"}"><div class="ph hi" style="background-image:url(${s.i})"></div><div class="sh"></div><div class="t"><h4>${s.n}</h4><div class="m">${lbl(s)}</div><div class="x"><p>${s.d}</p><div class="row">${s.a?`<button class="btn f" data-book="${s.n}">Choisir ce massage</button>`:"<span>Indisponible</span>"}</div></div></div></article>`).join("")}</div></div>`).join("");
 //$("#exs").innerHTML=EXP.map(e=>`<div class="ex rv"><div class="ph hi" style="background-image:url(${IMGS[e[3]].u})"></div><div><h3>${e[0]}</h3><div class="d">Durée : [À AJOUTER]</div><p>${e[1]}</p><button class="btn" data-book="${e[2]}">Réserver</button></div></div>`).join("");
 renderFaq();
 /* galerie */
@@ -373,6 +413,7 @@ $("#gal").innerHTML=GAL.filter(g=>cur=="TOUT"||g[0]==cur).map((g,i)=>`<div class
 gal();$("#fl").onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;gal()}};
 $("#gal").onclick=e=>{const p=e.target.closest(".ph");if(p){$("#lbi").style.cssText=`width:min(92vw,calc(85vh*${p.dataset.r}));aspect-ratio:${p.dataset.r};background-image:${p.style.backgroundImage}`;$("#lb").showModal()}};
 $("#lb").onclick=()=>$("#lb").close();
+$("#gal").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();e.target.click()}};
 /* avis */
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmtR=v=>String(v).replace(".",",");
@@ -460,9 +501,13 @@ function track(n){window.gtag&&gtag("event",n)}
 document.addEventListener("click",e=>{const a=e.target.closest("a,button");if(!a)return;if(a.matches("[data-wa],a[href*='wa.me']"))track("whatsapp_click");else if(a.matches("[data-call],a[href^='tel:']"))track("phone_click");else if(a.matches("[data-book]"))track("booking_click");else if(a.matches("[data-dir]"))track("google_maps_click")});
 /* langues */
 function lang(l){document.title=T[l].ti;$("meta[name=description]").content=T[l].md;document.documentElement.lang=l;document.documentElement.dir=l=="ar"?"rtl":"ltr";$$("[data-t]").forEach(e=>{const t=T[l][e.dataset.t];if(t)e.textContent=t});$$(".lg button").forEach(b=>b.classList.toggle("on",b.dataset.lg==l))}
-$(".lg").onclick=e=>{if(e.target.dataset.lg)lang(e.target.dataset.lg)};
+$$(".lg").forEach(l=>l.onclick=e=>{if(e.target.dataset.lg)lang(e.target.dataset.lg)});
 /* menu mobile, scroll, reveal */
-$("#bg").onclick=()=>{$("#hd").classList.toggle("m",$("#nv").classList.toggle("o"))};$("#nv").onclick=()=>{$("#nv").classList.remove("o");$("#hd").classList.remove("m")};
+const nv=$("#nv"),bgb=$("#bg");
+function menu(o){nv.classList.toggle("o",o);$("#hd").classList.toggle("m",o);document.body.style.overflow=o?"hidden":"";bgb.setAttribute("aria-expanded",o);bgb.textContent=o?"✕":"MENU"}
+bgb.onclick=()=>menu(!nv.classList.contains("o"));
+nv.onclick=e=>{if(e.target.closest("a"))menu(false)};
+addEventListener("keydown",e=>{if(e.key==="Escape")menu(false)});
 const hd=$("#hd"),hp=$("#hp");let tk=0;
 addEventListener("scroll",()=>{if(tk)return;tk=requestAnimationFrame(()=>{const y=scrollY;hd.classList.toggle("s",y>60);if(y<innerHeight)hp.style.transform=`translate3d(0,${y*.15}px,0)`;tk=0})},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
